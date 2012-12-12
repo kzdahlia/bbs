@@ -1,0 +1,21 @@
+= f.submit
+%br
+會員暱稱：
+= f.input_field :name
+%br
+會員自介：
+= f.input_field :intro
+%br
+email：
+= f.input_field :email, :placeholder => 'user@domain.com'
+%br
+生日：
+= f.input_field :birthday
+%br
+會員等級：
+= f.input_field :rank_id
+%br
+是否已認證：
+= f.input_field :is_enabled
+%br
+= f.submit

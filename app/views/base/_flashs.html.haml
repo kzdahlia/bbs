@@ -1,0 +1,5 @@
+- if flash[:error]
+  .alert.alert-error
+    %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    %h4 Warning!
+    = flash[:error]

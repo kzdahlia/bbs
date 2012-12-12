@@ -1,0 +1,16 @@
+index
+%br
+%br
+= link_to "new", new_board_path
+%br
+- @boards.each do |b|
+  %div
+    看板編號：
+    = b.id
+    %br
+    看板名稱：
+    = b.name
+    %br
+    = link_to "show", board_path(:id => b.id)
+    = link_to "edit", edit_board_path(:id => b.id)
+    = link_to "delete", board_path(:id => b.id), :method => :delete

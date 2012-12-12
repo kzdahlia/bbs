@@ -1,0 +1,22 @@
+index
+%br
+%br
+= link_to "new", new_user_path
+%br
+- @users.each do |u|
+  %div
+    會員 id：
+    = u.id
+    %br
+    會員暱稱：
+    = u.name
+    %br
+    e-mail：
+    = u.email
+    %br
+    生日：
+    = u.birthday
+    %br
+    = link_to "show", user_path(:id => u.id)
+    = link_to "edit", edit_user_path(:id => u.id)
+    = link_to "delete", user_path(:id => u.id), :method => :delete
