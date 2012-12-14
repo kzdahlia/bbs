@@ -11,11 +11,40 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121212111454) do
+ActiveRecord::Schema.define(:version => 20121213184041) do
 
   create_table "boards", :force => true do |t|
     t.string   "name"
     t.text     "intro"
+    t.integer  "user_id"
+    t.integer  "sort"
+    t.boolean  "is_enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.integer  "board_id"
+    t.string   "title"
+    t.text     "content"
+    t.integer  "user_id"
+    t.boolean  "is_enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ranks", :force => true do |t|
+    t.string   "name"
+    t.integer  "sort"
+    t.boolean  "is_enabled"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "replies", :force => true do |t|
+    t.integer  "post_id"
+    t.text     "quote"
+    t.text     "content"
     t.integer  "user_id"
     t.integer  "sort"
     t.boolean  "is_enabled"
@@ -28,7 +57,7 @@ ActiveRecord::Schema.define(:version => 20121212111454) do
     t.text     "intro"
     t.string   "email"
     t.date     "birthday"
-    t.string   "rank_id"
+    t.integer  "rank_id"
     t.boolean  "is_enabled"
     t.datetime "created_at"
     t.datetime "updated_at"

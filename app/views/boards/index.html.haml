@@ -1,7 +1,7 @@
 index
 %br
 %br
-= link_to "new", new_board_path
+= link_to "new", new_user_board_path(@user)
 %br
 - @boards.each do |b|
   %div
@@ -11,6 +11,6 @@ index
     看板名稱：
     = b.name
     %br
-    = link_to "show", board_path(:id => b.id)
-    = link_to "edit", edit_board_path(:id => b.id)
-    = link_to "delete", board_path(:id => b.id), :method => :delete
+    = link_to "show", user_board_path(@user,b)
+    = link_to "edit", edit_user_board_path(@user,b)
+    = link_to "delete", user_board_path(@user,b), :method => :delete

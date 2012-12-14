@@ -1,0 +1,26 @@
+index
+%br
+%br
+= link_to "new", new_user_board_post_path
+%br
+- @posts.each do |p|
+  %div
+    文章 id：
+    = p.id
+    %br
+    所屬版面 id：
+    = p.board_id
+    %br
+    標題：
+    = p.title
+    %br
+    內文：
+    = p.content
+    %br
+    作者 id：
+    = p.user_id
+    %br
+    = link_to "show", user_board_post_path(@user,@board,p)
+    = link_to "edit", edit_user_board_post_path(@user,@board,p)
+    = link_to "delete", user_board_post_path(@user,@board,p), :method => :delete
+  %br
