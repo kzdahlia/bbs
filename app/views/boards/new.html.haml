@@ -1,5 +1,5 @@
 new
 %br
 %br
-= simple_form_for @board, :url => user_boards_path, :method => :post do |f|
+= simple_form_for @board, :url => user_boards_path(@user), :method => :post do |f|
   = render :partial => "form", :locals => { :f => f }

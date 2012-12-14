@@ -1,7 +1,7 @@
 index
 %br
 %br
-= link_to "new", new_user_board_post_path
+= link_to "new", new_user_board_post_path(@user, @board)
 %br
 - @posts.each do |p|
   %div

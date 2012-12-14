@@ -17,7 +17,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to user_board_posts_path(@user, @board)
     else
-      flash[:error] = @post.errors.full_message
+      flash[:error] = @post.errors.full_messages
       render :new
     end
   end
@@ -27,16 +27,16 @@ class PostsController < ApplicationController
 
   def update
     if @post.update_attributes params[:post]
-      redirect_to user_board_posts_path
+      redirect_to user_board_posts_path(@user, @board)
     else
-      flash[:error] = @post.errors.full_message
+      flash[:error] = @post.errors.full_messages
       render :edit
     end
   end
 
   def destroy
     @post.destroy
-    redirect_to user_board_posts_path
+    redirect_to user_board_posts_path(@user, @board)
   end
 
   private

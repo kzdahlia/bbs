@@ -1,0 +1,20 @@
+index
+%br
+%br
+= link_to "new", new_user_board_post_reply_path(@user, @board, @post)
+%br
+- @replies.each do |r|
+  %div
+    所屬文章 id：
+    = r.post_id
+    %br
+    引文：
+    = r.quote
+    %br
+    內文：
+    = r.content
+    %br
+    = link_to "show", user_board_post_reply_path(@user, @board, @post, r)
+    = link_to "edit", edit_user_board_post_reply_path(@user, @board, @post, r)
+    = link_to "delete", user_board_post_reply_path(@user, @board, @post, r), :method => :delete
+  %br

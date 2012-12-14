@@ -48,7 +48,9 @@ Bbs::Application.routes.draw do
 
 resources :users do
   resources :boards do
-    resources :posts
+    resources :posts do
+      resources :replies
+    end
   end
 end
   # You can have the root of your site routed with "root"

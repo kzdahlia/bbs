@@ -1,0 +1,5 @@
+new
+%br
+%br
+= simple_form_for @reply, :url => user_board_post_replies_path(@user, @board, @post), :method => :post do |f|
+  = render :partial => "form", :locals => { :f => f }
