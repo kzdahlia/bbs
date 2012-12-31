@@ -13,6 +13,8 @@ gem 'compass', '0.12.alpha.4'
 gem 'mysql2'
 gem 'simple_form', "2.0.4"
 
+gem "nested_form", :git => 'git://github.com/ryanb/nested_form.git'
+
 
 # Gems used only for assets and not required
 # in production environments by default.

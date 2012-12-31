@@ -4,4 +4,5 @@ class User < ActiveRecord::Base
   has_many :posts
   has_many :replies
   belongs_to :rank
+  accepts_nested_attributes_for :boards
 end

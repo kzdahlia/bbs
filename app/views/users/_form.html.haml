@@ -18,4 +18,11 @@ email：
 是否已認證：
 = f.input_field :is_enabled
 %br
+= f.fields_for :boards do |builder|
+  版面名稱：
+  = builder.input_field :name
+  %br
+  / = link_to_remove_fields "remove", builder
+= f.link_to_add "新增管理版面", :boards
+%br
 = f.submit
